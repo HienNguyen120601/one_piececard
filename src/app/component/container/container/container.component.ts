@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent implements OnInit {
-
+status:boolean=false;
   type:string[]=["All","Red","Green","Blue","Purple","Black","Yellow"];
+   handleCart()
+   {
+    this.status=!this.status;
+   }
+ 
+  
   constructor() { }
 
   ngOnInit() {

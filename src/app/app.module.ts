@@ -4,7 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header/header.component';
 import { FooterComponent } from './component/footer/footer/footer.component';
+
 import { ContainerComponent } from './component/container/container/container.component';
+import { AppRoutingModule } from './router/router-routing.module';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HomeComponent } from './pages/home/home.component';
+import {HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -12,9 +17,14 @@ import { ContainerComponent } from './component/container/container/container.co
     HeaderComponent,
     FooterComponent,
     ContainerComponent,
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
