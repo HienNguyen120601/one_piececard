@@ -10,6 +10,7 @@ import { AppRoutingModule } from './router/router-routing.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import {HttpClientModule} from "@angular/common/http"
+import { CardDetailComponent } from './pages/cardDetail/cardDetail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from "@angular/common/http"
     FooterComponent,
     ContainerComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,

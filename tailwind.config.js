@@ -17,6 +17,7 @@ module.exports = {
       "40%": '40%',
       "1/5": '20%',
     },
+
     extend: {
       backgroundImage: {
         'map': "url('assets/bg/bg.jpg')"
