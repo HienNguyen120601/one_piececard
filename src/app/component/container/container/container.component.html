@@ -1,0 +1,71 @@
+<div class="max-w-7xl w-full m-auto pb-12 ">
+    <div class="rounded-md overflow-hidden text-center pt-12 text-3xl font-extrabold">
+        <span>
+            CARDLIST
+        </span>
+        <img class="m-auto " src="assets/bg/ico_anchor.png" alt="">
+    </div>
+    <div class="bg-white w-full mt-12 p-4 rounded-md shadow-2xl">
+        <input placeholder="Search..." class="h-12 border-b outline-none text-base" type="text" #nameValue>
+        <button (click)="searchByName(nameValue.value)"
+            class="bg-primary border-none rounded-md flex items-center justify-center mt-4 p-2 min-w-normal hover:text-black hover:bg-primary-hover font-bold text-white transition-colors duration-300">Search</button>
+        <span class="block mt-8">--Color </span>
+        <div class="font-bold flex mt-4 ">
+            <div (click)="handleFilter(item);"
+                class="flex item-center justify-center p-1 border-2 border-black border-solid min-w-normal cursor-pointer mr-2 hover:bg-black hover:text-white transition-all duration-300"
+                *ngFor="let item of type" color="123">
+                <span>{{item}}</span>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="flex flex-wrap">
+        <div *ngFor="let item of this.cards" routerLink="card/{{item.id}}" routerLinkActive="active"
+            class="h-80 w-1/5 p-4 mt-12 flex ">
+            <img (click)="handleCart();"
+                class=" cursor-pointer h-full w-full rounded-md object-contain  hover:-translate-y-3 transition-all duration-300"
+                src={{item.img}} alt="">
+
+        </div>
+        <!-- <div class="  h-80 w-1/5 p-2 mt-12  flex ">
+            <img class=" cursor-pointer h-full w-full rounded-md object-contain  hover:-translate-y-3 transition-all duration-300"
+                src="https://asia-en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png?230203" alt="">
+        </div>
+        <div class="  h-80 w-1/5 p-2 mt-12  flex ">
+            <img class=" cursor-pointer h-full w-full rounded-md object-contain  hover:-translate-y-3 transition-all duration-300"
+                src="https://asia-en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png?230203" alt="">
+        </div>
+        <div class="  h-80 w-1/5 p-2 mt-12  flex ">
+            <img class=" cursor-pointer h-full w-full rounded-md object-contain  hover:-translate-y-3 transition-all duration-300"
+                src="https://asia-en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png?230203" alt="">
+        </div>
+        <div class="  h-80 w-1/5 p-2 mt-12  flex ">
+            <img class=" cursor-pointer h-full w-full rounded-md object-contain  hover:-translate-y-3 transition-all duration-300"
+                src="https://asia-en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png?230203" alt="">
+        </div>
+        <div class="  h-80 w-1/5 p-2 mt-12  flex ">
+            <img class=" cursor-pointer h-full w-full rounded-md object-contain hover:-translate-y-3 transition-all duration-300"
+                src="https://asia-en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png?230203" alt="">
+
+        </div>
+        <div class="  h-80 w-1/5 p-2 mt-12  flex ">
+            <img class=" cursor-pointer h-full w-full rounded-md object-contain  hover:-translate-y-3 transition-all duration-300"
+                src="https://asia-en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png?230203" alt="">
+        </div>
+        <div class="  h-80 w-1/5 p-2 mt-12  flex ">
+            <img class="cursor-pointer h-full w-full rounded-md object-contain  hover:-translate-y-3 transition-all duration-300"
+                src="https://asia-en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png?230203" alt="">
+        </div>
+        <div class="  h-80 w-1/5 p-2 mt-12  flex ">
+            <img class="cursor-pointer h-full w-full rounded-md object-contain  hover:-translate-y-3 transition-all duration-300"
+                src="https://asia-en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png?230203" alt="">
+        </div>
+        <div class="  h-80 w-1/5 p-2 mt-12  flex ">
+            <img class="cursor-pointer h-full w-full rounded-md object-contain  hover:-translate-y-3 transition-all duration-300"
+                src="https://asia-en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png?230203" alt="">
+        </div> -->
+    </div>
+
+</div>
+<!-- <pagination-controls class="flex items-center justify-center" (pageChange)="p=$event"></pagination-controls> -->

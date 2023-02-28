@@ -1,0 +1,15 @@
+<div class="w-1/5 min-h-90vh bg-primary p-4 relative float-left">
+  <span
+    class=" relative flex items-center justify-center text-base after:absolute after:w-full after:h-1px after:bg-black after:-bottom-1">
+    <fa-icon class="text-white" [icon]="faHouse"></fa-icon>
+    <div routerLink="/admin" routerLinkActive="active" class="text-white font-bold ml-2 cursor-pointer">Trang chủ admin
+    </div>
+  </span>
+  <ul class="list-none text-white mt-5">
+    <span class="text-white">Quản trị sản phẩm</span>
+    <li routerLink="/product" routerLinkActive="active" class="ml-4 p-2 cursor-pointer hover:opacity-70">Sản phẩm</li>
+    <li class="ml-4 p-2 cursor-pointer hover:opacity-70">Khách hàng</li>
+    <li class="ml-4 p-2 cursor-pointer hover:opacity-70">...</li>
+  </ul>
+
+</div>

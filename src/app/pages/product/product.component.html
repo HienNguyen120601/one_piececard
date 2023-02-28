@@ -1,0 +1,96 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="min-h-90vh w-80% relative float-right ">
+    <div class=" flex items-center bg-primary-hover p-4 ">
+        <span class="text-xl">Quản trị sản phẩm > Sản phẩm</span>
+        <div class="flex ml-10 rounded-lg">
+            <input placeholder="Search..."
+                class="h-14 border-b-2 border-cyan-50 outline-none text-base bg-transparent text-black" type="text"
+                #nameValue>
+            <button (click)="searchByName(nameValue.value)"
+                class="bg-primary border-none rounded-md flex items-center justify-center mt-2 ml-4 p-2 min-w-normal hover:text-black  font-bold text-white transition-colors duration-300">Search</button>
+        </div>
+    </div>
+
+    <div class="overflow-y-scroll max-h-content">
+        <div class="flex w-full font-bold">
+            <span class="block p-1 border-2 border-solid w-20% truncate text-center">Name</span>
+            <span class="block p-1 border-2 border-solid w-20% truncate text-center">Color</span>
+            <span class="block p-1 border-2 border-solid w-20% truncate text-center">Effect</span>
+            <span class="block p-1 border-2 border-solid w-20% truncate text-center">Power</span>
+            <span class="block p-1 border-2 border-solid w-10% truncate text-center">Img</span>
+            <span class="block p-1 border-2 border-solid w-10% truncate text-center">Service</span>
+        </div>
+        <div *ngFor="let item of this.cards" class=" w-full">
+            <div class="flex w-full">
+                <div class=" p-2 border-2 border-solid w-20% truncate">{{item.name}}</div>
+                <div class=" p-2 border-2 border-solid w-20% truncate">{{item.color}}</div>
+                <div class=" p-2 border-2 border-solid w-20% truncate">{{item.effect}}</div>
+                <div class=" p-2 border-2 border-solid w-20% truncate">{{item.power}}</div>
+                <div (click)="showImg(item.img)"
+                    class="p-1 border-2 border-solid w-10% truncate flex items-center justify-center cursor-pointer hover:text-primary ">
+                    <fa-icon [icon]="faEye"></fa-icon>
+                </div>
+                <div class=" p-1 border-2 border-solid w-10% truncate flex items-center justify-around ">
+                    <fa-icon (click)="showFormUpdate(item.id)" class="hover:text-primary cursor-pointer"
+                        [icon]="faPen"></fa-icon>
+                    <fa-icon (click)="handleDelete(item.id)" class="hover:text-primary cursor-pointer"
+                        [icon]="faCircle"></fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div [ngClass]="this.showImgView? 'flex':'hidden'" (click)="this.showImgView=false"
+    class="showImg fixed top-0 bottom-0 right-0 left-0 z-50 bg-overlay items-center justify-center animate-scale ">
+</div>
+<div [ngClass]="this.showUpdate? 'flex':'hidden'"
+    class=" fixed top-0 bottom-0 right-0 left-0 items-center justify-center animate-scale z-50 ">
+    <div (click)="this.showUpdate=false" class="fixed top-0 bottom-0 right-0 left-0 z-49 bg-overlay">
+    </div>
+    <div class="bg-white z-50 w-96 p-10 rounded-lg">
+        <div class="mt-4">
+            <span class="block">Name:</span>
+            <input [(ngModel)]="name" (ngModelChange)="nameChange($event)"
+                class="p-4 w-full mt-2 border-2 border-primary outline-none rounded-lg h-10" type="text">
+        </div>
+        <div class="mt-4">
+            <span class="block">Color:</span>
+            <select [(ngModel)]="color" (ngModelChange)="colorChange($event)"
+                class=" w-full mt-2 border-2 border-primary outline-none rounded-lg h-10">
+                <option>Red</option>
+                <option>Yellow</option>
+                <option>Green</option>
+                <option>Blue</option>
+                <option>Purple</option>
+            </select>
+        </div>
+        <div class="mt-4">
+            <span class="block">Power</span>
+            <input [(ngModel)]="power" (ngModelChange)="powerChange($event)" class=" p-4 w-full mt-2 border-2
+                border-primary outline-none rounded-lg h-10" type="number">
+        </div>
+        <div class="mt-4">
+            <span>Effect</span>
+            <input [(ngModel)]="effect" (ngModelChange)="effectChange($event)"
+                class="p-4 w-full mt-2 border-2 border-primary outline-none rounded-lg h-10" type="text">
+        </div>
+        <div class="mt-4">
+            <span class="block">Atribute</span>
+            <select [(ngModel)]="attribute" (ngModelChange)="attributeChange($event)"
+                class=" w-full mt-2 border-2 border-primary outline-none rounded-lg h-10">
+                <option>Special</option>
+                <option>Strike</option>
+                <option>Slash</option>
+                <option>Wisdom</option>
+            </select>
+        </div>
+        <div class="mt-4">
+            <span>Image</span>
+            <input class="p-4 w-full mt-2 border-2 border-primary outline-none rounded-lg h-10" type="text">
+        </div>
+        <button (click)="updateCard(this.idUpdate)"
+            class="mt-4 bg-primary h-10 w-20 rounded-lg text-white hover:bg-primary-hover">Submit</button>
+    </div>
+</div>

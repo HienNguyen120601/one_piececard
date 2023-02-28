@@ -1,0 +1,41 @@
+<div class="">
+  <app-header></app-header>
+  <app-container></app-container>
+  <div style="width: 100%;" class=" max-w-7xl m-auto z-50 top:0">
+    <div style="width: 100%;" class="w-full max-w-7xl absolute top-52 m-auto">
+      <div routerLink="/" routerLinkActive="active"
+        class="  cartOverlay fixed bottom-0 top-0 left-0 right-0 z-40 bg-overlay">
+      </div>
+      <div
+        class=" animate-scale flex items-center justify-center text-3xl relative z-50 w-full h-16 bg-black text-white font-bold rounded-t-lg">
+        <span>{{card?card.name:""}}</span>
+      </div>
+      <div class=" animate-scale relative top-0 w-full z-50 m-auto w-full max-w-7xl bg-white p-4 rounded-b-lg">
+        <div class=" flex">
+          <div class="w-40%">
+            <img class="w-full object-contain" alt="" src={{card.img}}>
+          </div>
+          <div class="w-60% pr-5 pl-5 pt-16 pb-16">
+            <div class="font-extrabold h-12 border-b mt-8 text-base border-primary border-solid">
+              Power:<span class=" font-normal">
+                {{card?card.power:""}}
+              </span></div>
+            <div class="font-extrabold h-12 border-b mt-8 text-base border-primary border-solid">
+              Color:<span class=" font-normal">
+                {{card?card.color:""}}
+              </span> </div>
+            <div class="font-extrabold h-12 mt-8 text-base ">Effect: <span class=" font-normal">
+                {{card?card.effect:""}}
+              </span></div>
+            <div class="font-extrabold h-12 mt-8 text-base ">Attribute: <span class=" font-normal">
+                {{card.attribute}}
+              </span></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
