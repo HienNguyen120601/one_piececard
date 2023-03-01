@@ -1,0 +1,23 @@
+<div class="fixed top-0 bottom-0 left-0 right-0 bg-map ">
+
+  <div class="flex flex-col w-80 m-auto mt-28  ">
+    <img src="assets/logo/logo_op.png" alt="">
+    <div class="flex flex-col rounded-lg bg-primary p-4 mt-5">
+      <label class="block text-white mb-2" placeholder="Your email..." for="email">Your email</label>
+      <input [(ngModel)]="email" (ngModelChange)="emailChange($event)" type=" email"
+        class="p-4 rounded-lg h-11 outline-none">
+      <label class="block text-white mb-2 mt-8" placeholder="Your password..." for="email">Your password</label>
+      <input [(ngModel)]="password" (ngModelChange)="passwordChange($event)" type="password"
+        class="p-4 rounded-lg h-11 outline-none">
+      <div class="flex">
+        <button routerLink="/" routerLinkActive="active"
+          class="bg-white flex-1 h-11 border border-solid mt-8 text-black text-bold mr-2 hover:opacity-75 rounded-lg">
+          Back</button>
+        <button (click)="login()"
+          class="bg-white flex-1 h-11 border border-solid mt-8 text-black text-bold ml-2 hover:opacity-75 rounded-lg">Login</button>
+      </div>
+      <span class="text-white text-xs block mt-3">{{this.message}}</span>
+    </div>
+
+  </div>
+</div>

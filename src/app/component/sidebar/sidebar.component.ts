@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,9 +11,12 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons'
 export class SidebarComponent implements OnInit {
   faHouse = faHouse;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
-
+  logOut() {
+    sessionStorage.removeItem("islogin")
+    this.router.navigate(['/'])
+  }
 }

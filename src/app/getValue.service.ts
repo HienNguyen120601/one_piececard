@@ -1,4 +1,4 @@
-import { EventEmitter,Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +6,7 @@ import { EventEmitter,Injectable } from '@angular/core';
 export class GetValueService {
   mystatusChanged: EventEmitter<any> = new EventEmitter();
   mystatus: any;
-  constructor() {}
+  constructor() { }
   get data(): any {
     return this.mystatus;
   }
@@ -14,6 +14,4 @@ export class GetValueService {
     this.mystatus = val;
     this.mystatusChanged.emit(val);
   }
-
-
 }

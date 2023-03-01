@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { faCircleXmark, faEye, faPen } from "@fortawesome/free-solid-svg-icons"
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',

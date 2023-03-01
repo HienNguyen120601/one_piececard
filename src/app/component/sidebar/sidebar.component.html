@@ -8,8 +8,8 @@
   <ul class="list-none text-white mt-5">
     <span class="text-white">Quản trị sản phẩm</span>
     <li routerLink="/product" routerLinkActive="active" class="ml-4 p-2 cursor-pointer hover:opacity-70">Sản phẩm</li>
-    <li class="ml-4 p-2 cursor-pointer hover:opacity-70">Khách hàng</li>
-    <li class="ml-4 p-2 cursor-pointer hover:opacity-70">...</li>
+    <!-- <li class="ml-4 p-2 cursor-pointer hover:opacity-70">Khách hàng</li> -->
+    <li (click)="logOut()" class="ml-4 p-2 cursor-pointer hover:opacity-70">Log out</li>
   </ul>
 
 </div>

@@ -1,11 +1,51 @@
-<div class="sticky top-0 flex h-36 bg-white shadow-md p-3 items-center justify-evenly z-10">
-  <a routerLink="/admin" routerLinkActive="active"
-    class="px-4  cursor-pointer text-3xl font-bold text-primary hover:text-primary-hover">
-    Admin
-  </a>
-  <img src="assets/logo/logo_op.png" alt="">
-  <a routerLink="/" routerLinkActive="active"
-    class="px-4  ml-8 text-3xl font-bold cursor-pointer text-primary hover:text-primary-hover text-end">
-    Heros Card
-  </a>
+<div routerLink="/" routerLinkActive="active"
+  class="sticky top-0 flex h-20 bg-white shadow-md p-3 items-center justify-between z-10 w-full">
+  <img class="cursor-pointer" src="assets/logo/logo_op.png" alt="">
+  <ul class="h-full list-none items-end min-[1px]:hidden md:flex">
+    <li routerLink="/" routerLinkActive="active"
+      class="px-4 ml-8 text-base font-bold cursor-pointer text-primary hover:text-primary-hover text-end">
+      CARDLIST
+    </li>
+    <li routerLink="/login" routerLinkActive="active"
+      class="px-4 ml-8 text-base font-bold cursor-pointer text-primary hover:text-primary-hover text-end">
+      ADMIN
+    </li>
+    <li routerLink="/" routerLinkActive="active"
+      class="px-4 ml-8 text-base font-bold cursor-pointer text-primary hover:text-primary-hover text-end">
+      EVENTS
+    </li>
+    <li routerLink="/" routerLinkActive="active"
+      class="px-4 ml-8 text-base font-bold cursor-pointer text-primary hover:text-primary-hover text-end">
+      RULES
+    </li>
+  </ul>
+  <div (click)="this.showMenu=true" class="bg-menu h-20 w-20 bg-cover min-[1px]:block md:hidden cursor-pointer">
+  </div>
+  <div [ngClass]="this.showMenu?'block':'hidden'"
+    class="fixed top-0 bottom-0 right-0 w-1/2 bg-primary z-50 animate-translateX   ">
+    <div (click)="this.showMenu=false" class="fixed top-0 bottom-0 right-0 left-0 bg-overlay z-40">
+    </div>
+    <ul class="relative  flex flex-col h-full list-none items-start z-50 ">
+      <div class="w-full bg-primary flex justify-center p-4 border-b-2">
+        <img class="cursor-pointer  object-cover" src="assets/logo/logo_op.png" alt="">
+      </div>
+      <li routerLink="/" routerLinkActive="active"
+        class="p-4 text-base font-bold cursor-pointer text-white hover:text-primary-hover ">
+        CARDLIST
+      </li>
+      <li routerLink="/login" routerLinkActive="active"
+        class="p-4 text-base font-bold cursor-pointer text-white hover:text-primary-hover ">
+        ADMIN
+      </li>
+      <li routerLink="/" routerLinkActive="active"
+        class="p-4 text-base font-bold cursor-pointer text-white hover:text-primary-hover ">
+        EVENTS
+      </li>
+      <li routerLink="/" routerLinkActive="active"
+        class="p-4 text-base font-bold cursor-pointer text-white hover:text-primary-hover ">
+        RULES
+      </li>
+    </ul>
+  </div>
+
 </div>
