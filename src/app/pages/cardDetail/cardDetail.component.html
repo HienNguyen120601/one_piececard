@@ -4,7 +4,7 @@
   <div style="width: 100%;" class=" max-w-7xl m-auto z-50 top:0">
     <div style="width: 100%;" class="w-full max-w-7xl absolute top-52 m-auto">
       <div routerLink="/" routerLinkActive="active"
-        class="  cartOverlay fixed bottom-0 top-0 left-0 right-0 z-40 bg-overlay">
+        class="cartOverlay fixed bottom-0 top-0 left-0 right-0 z-40 bg-overlay">
       </div>
       <div
         class=" animate-scale flex items-center justify-center text-3xl relative z-50 w-full h-16 bg-black text-white font-bold rounded-t-lg">
@@ -13,7 +13,7 @@
       <div class=" animate-scale relative top-0  z-50 m-auto w-full max-w-7xl bg-white p-4 rounded-b-lg">
         <div class="flex sm:flex-row flex-col">
           <div class="min-[950px]:w-40% min-[650px]:w-60% min-[1px]:w-full">
-            <img class="w-full h-full object-contain" alt="" src={{card.img}}>
+            <img class="w-full h-full object-contain" src="{{card? card.img:' '}}" alt="">
           </div>
           <div class="min-[950px]:w-60% min-[640px]:w-40% min-[1px]:w-full pr-5 pl-5 pt-16 pb-16">
             <div class="font-extrabold h-12 border-b mt-8 text-base border-primary border-solid">

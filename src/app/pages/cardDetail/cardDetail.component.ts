@@ -23,7 +23,6 @@ export class CardDetailComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.http.get(`http://localhost:3001/api/v1/card/${this.id}`).subscribe(data => {
       this.card = data;
-      console.log(this.card)
     })
   }
   // getData() {

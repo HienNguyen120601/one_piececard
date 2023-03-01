@@ -13,17 +13,24 @@ export class ContainerComponent implements OnInit {
   type: string[] = ["All", "Red", "Green", "Blue", "Purple", "Black", "Yellow"];
   color: boolean = sessionStorage.getItem('color') ? true : false;
   url: string = "http://localhost:3001/api/v1/card/"
-
   constructor(private http: HttpClient, private element: ElementRef) {
-    if (sessionStorage.getItem('color') != "All") {
-      const colorUrl = !this.color ? "http://localhost:3001/api/v1/card/" : "http://localhost:3001/api/v1/card/color/" + sessionStorage.getItem('color')
-      this.getCard(colorUrl);
-    }
-    else {
-      this.getCard(this.url)
-    }
   }
   ngOnInit() {
+    // if (sessionStorage.getItem('color') != "All") {
+    //   const colorUrl = !this.color ? "http://localhost:3001/api/v1/card/" : "http://localhost:3001/api/v1/card/color/" + sessionStorage.getItem('color')
+    //   this.getCard(colorUrl);
+    // }
+    // else {
+    //   this.getCard(this.url)
+    // }
+    const urlInHome = "http://localhost:3001/api/v1/card/"
+    const url = sessionStorage.getItem('url')
+    if (url) {
+      this.getCard(url)
+    }
+    else {
+      this.getCard(urlInHome)
+    }
   }
   handleCart() {
     this.status = !this.status;
@@ -41,20 +48,43 @@ export class ContainerComponent implements OnInit {
     sessionStorage.setItem("color", color)
     if (color != "All") {
       const urlColor: string = this.url + "color/" + color
+      sessionStorage.setItem('url', urlColor)
       this.getCard(urlColor)
     }
     else {
       this.getCard(this.url)
+      sessionStorage.setItem('url', this.url)
     }
   }
   searchByName(name: string) {
     if (name) {
-      const nameUrl = `${this.url}name/${name}`
-      this.getCard(nameUrl)
+      const color = sessionStorage.getItem("color")
+
+      if (color) {
+        console.log(color)
+        if (color != "All") {
+          const nameUrl = `${this.url}multi/${name}/${color}`
+          sessionStorage.setItem('url', nameUrl)
+          sessionStorage.removeItem("color")
+          this.getCard(nameUrl)
+
+        }
+        else {
+          const nameUrl = `${this.url}name/${name}`
+          this.getCard(nameUrl)
+
+        }
+      }
+      else {
+        const nameUrl = `${this.url}name/${name}`
+        this.getCard(nameUrl)
+      }
     }
     else {
       this.getCard(this.url)
     }
+
   }
+
 
 }

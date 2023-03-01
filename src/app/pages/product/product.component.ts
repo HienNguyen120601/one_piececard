@@ -95,9 +95,7 @@ export class ProductComponent implements OnInit {
     this.attribute = cardClicked[0].attribute
   }
   updateCard(id: string) {
-    console.log(id)
     const newUrl = `${this.url}${id}`
-
     const data = {
       name: this.name,
       power: this.power,
