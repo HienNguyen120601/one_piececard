@@ -10,12 +10,12 @@
         class=" animate-scale flex items-center justify-center text-3xl relative z-50 w-full h-16 bg-black text-white font-bold rounded-t-lg">
         <span>{{card?card.name:""}}</span>
       </div>
-      <div class=" animate-scale relative top-0 w-full z-50 m-auto w-full max-w-7xl bg-white p-4 rounded-b-lg">
-        <div class=" flex">
-          <div class="w-40%">
-            <img class="w-full object-contain" alt="" src={{card.img}}>
+      <div class=" animate-scale relative top-0  z-50 m-auto w-full max-w-7xl bg-white p-4 rounded-b-lg">
+        <div class="flex sm:flex-row flex-col">
+          <div class="min-[950px]:w-40% min-[650px]:w-60% min-[1px]:w-full">
+            <img class="w-full h-full object-contain" alt="" src={{card.img}}>
           </div>
-          <div class="w-60% pr-5 pl-5 pt-16 pb-16">
+          <div class="min-[950px]:w-60% min-[640px]:w-40% min-[1px]:w-full pr-5 pl-5 pt-16 pb-16">
             <div class="font-extrabold h-12 border-b mt-8 text-base border-primary border-solid">
               Power:<span class=" font-normal">
                 {{card?card.power:""}}
@@ -24,12 +24,15 @@
               Color:<span class=" font-normal">
                 {{card?card.color:""}}
               </span> </div>
-            <div class="font-extrabold h-12 mt-8 text-base ">Effect: <span class=" font-normal">
+            <div class="font-extrabold mt-8 text-base h-fit ">Effect: <div
+                class=" block font-normal text-ellipsis overflow-hidden">
                 {{card?card.effect:""}}
-              </span></div>
-            <div class="font-extrabold h-12 mt-8 text-base ">Attribute: <span class=" font-normal">
+              </div>
+            </div>
+            <div class="relative font-extrabold h-12 mt-8 text-base ">Attribute: <div class="block font-normal">
                 {{card.attribute}}
-              </span></div>
+              </div>
+            </div>
           </div>
         </div>
 
